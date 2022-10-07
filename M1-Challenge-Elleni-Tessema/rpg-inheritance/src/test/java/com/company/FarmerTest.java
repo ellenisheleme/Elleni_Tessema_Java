@@ -14,7 +14,7 @@ public class FarmerTest {
 
    @Before
     public void setUp(){
-       farmer = new Farmer();
+       farmer = new Farmer("Joe", true, true);
        player1 = new Warrior();
 
        }
