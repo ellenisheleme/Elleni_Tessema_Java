@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class   Players {
+public abstract class  Players {
     private String name;
     private int strength;
     private int health;
@@ -9,7 +9,7 @@ public abstract class   Players {
     private int attackPower;
     private boolean running;
     private boolean arrested;
-
+// Based on office hour activity on October 4,  2022
     public Players(String name, int strength, int health, int stamina, int speed, int attackPower, boolean running, boolean arrested) {
         this.name = name;
         this.strength = strength;

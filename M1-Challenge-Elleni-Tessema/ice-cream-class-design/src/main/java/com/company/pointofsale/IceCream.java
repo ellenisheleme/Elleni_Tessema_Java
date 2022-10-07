@@ -44,8 +44,8 @@ public class IceCream {
                 ", price='" + price + '\'' +
                 '}';
     }
-
-
-
-
+  public double totalPrice(){
+        double totalPrice = Integer.parseInt(quantity) * price ;
+        return  totalPrice;
+  }
 }

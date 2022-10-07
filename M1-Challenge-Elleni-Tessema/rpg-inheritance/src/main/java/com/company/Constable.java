@@ -19,7 +19,6 @@ public class Constable extends Players {
     public Constable(String name){
 
     }
-
     public boolean isJurisdiction() {
         return jurisdiction;
     }
