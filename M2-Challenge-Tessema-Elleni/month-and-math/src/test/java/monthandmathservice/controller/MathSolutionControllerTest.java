@@ -169,4 +169,46 @@ public class MathSolutionControllerTest {
                 .andExpect(status().isCreated());
     }
 
+    @Test
+    public void shouldReturn422WhenOperandIsNotANumberMultiplyingNumbers() throws Exception{
+        //ARRANGE
+        MathSolution inputSolution = new MathSolution();
+        inputSolution.setOperand1("TryIt");
+        inputSolution.setOperand2("4");
+        inputSolution.setOperation("/multiply");
+
+        String inputJson= mapper.writeValueAsString(inputSolution);
+
+        //ACT
+
+        mockMvc.perform(
+                        post("/multiply")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturn422WhenOperandIsMissedWhenMultiplying() throws Exception{
+
+        //ARRANGE
+        MathSolution inputSolution = new MathSolution();
+        inputSolution.setOperand2("4");
+        inputSolution.setOperation("/multiply");
+
+        String inputJson= mapper.writeValueAsString(inputSolution);
+
+        //ACT
+
+        mockMvc.perform(
+                        post("/multiply")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
 }
