@@ -57,7 +57,7 @@ public class MonthController {
         int min = 1;
         int range = (max - min) + 1;
 
-        int randomMonth = min + (int) (Math.random() * max);
+        int randomMonth = min + (int) (Math.random() * range);
         monthandmathservice.model.Month month = null;
         for (int i = 0; i < monthList.size(); i++) {
             if (monthList.get(i).getMonthNumber() == randomMonth) {

@@ -17,9 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class MonthControllerTest {
     @Autowired
    private MockMvc mockMvc;
-
     private ObjectMapper mapper = new ObjectMapper();
-
     @Test
     public void shouldReturnAllMonthsInTheList() throws Exception {
         mockMvc.perform(get("/month"))
@@ -27,7 +25,6 @@ public class MonthControllerTest {
                 .andExpect(status().isNoContent())
                 .andExpect(jsonPath("$[0]").isNotEmpty());
     }
-
     @Test
     public void shouldReturnTheAssociatedMonthName() throws Exception{
 

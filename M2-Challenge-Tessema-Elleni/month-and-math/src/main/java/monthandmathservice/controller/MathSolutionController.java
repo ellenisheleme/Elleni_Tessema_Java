@@ -17,7 +17,7 @@ public class MathSolutionController {
         mathSolution.setOperand1(operand.getOperand1());
         mathSolution.setOperand2(operand.getOperand2());
         mathSolution.setOperation("add");
-        mathSolution.setAnswer(Integer.parseInt(operand.getOperand1())+Integer.parseInt(operand.getOperand2()));
+        mathSolution.setAnswer(Integer.parseInt(operand.getOperand1()) + Integer.parseInt(operand.getOperand2()));
 
         return mathSolution;
 
@@ -31,7 +31,7 @@ public class MathSolutionController {
         mathSolution.setOperand1(operand.getOperand1());
         mathSolution.setOperand2(operand.getOperand2());
         mathSolution.setOperation("subtract");
-        mathSolution.setAnswer(Integer.parseInt(operand.getOperand1())- Integer.parseInt(operand.getOperand2()));
+        mathSolution.setAnswer(Integer.parseInt(operand.getOperand1()) - Integer.parseInt(operand.getOperand2()));
 
         return mathSolution;
 

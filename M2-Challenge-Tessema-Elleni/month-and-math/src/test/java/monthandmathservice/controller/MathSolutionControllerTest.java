@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -23,16 +24,14 @@ public class MathSolutionControllerTest {
     @Test
     public void shouldReturnAnswerSumOfOperand1AndOperand2() throws Exception{
 
-        //ARRANGE
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand1("5");
         inputSolution.setOperand2("4");
         inputSolution.setOperation("add");
-        inputSolution.setAnswer(Integer.parseInt(inputSolution.getOperand1()) + Integer.parseInt(inputSolution.getOperand2()));
+       inputSolution.setAnswer(Integer.parseInt(inputSolution.getOperand1()) +
+               Integer.parseInt(inputSolution.getOperand2()));
 
         String inputJson= mapper.writeValueAsString(inputSolution);
-
-        //ACT
 
         mockMvc.perform(
                post("/add")
@@ -41,18 +40,17 @@ public class MathSolutionControllerTest {
         )
                 .andDo(print())
                 .andExpect(status().isCreated());
+
     }
     @Test
     public void shouldReturn422WhenOperandIsNotANumber() throws Exception{
-        //ARRANGE
+
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand1("TryIt");
         inputSolution.setOperand2("4");
         inputSolution.setOperation("add");
 
         String inputJson= mapper.writeValueAsString(inputSolution);
-
-        //ACT
 
         mockMvc.perform(
                         post("/add")
@@ -62,7 +60,6 @@ public class MathSolutionControllerTest {
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());
     }
-
     @Test
     public void shouldReturn422WhenOperandIsMissed() throws Exception{
 
@@ -72,8 +69,6 @@ public class MathSolutionControllerTest {
         inputSolution.setOperation("add");
 
         String inputJson= mapper.writeValueAsString(inputSolution);
-
-        //ACT
 
         mockMvc.perform(
                         post("/add")
@@ -95,7 +90,6 @@ public class MathSolutionControllerTest {
 
         String inputJson= mapper.writeValueAsString(inputSolution);
 
-        //ACT
         mockMvc.perform(
                         post("/subtract")
                                 .content(inputJson)
@@ -105,9 +99,45 @@ public class MathSolutionControllerTest {
                 .andExpect(status().isCreated());
     }
     @Test
-    public void shouldReturnAnswerQuotientOfOperand1AndOperand2() throws Exception{
+    public void shouldReturn422WhenOperandIsNotANumberWhenSubtractingOperand1FromOperand2() throws Exception{
+
+        MathSolution inputSolution = new MathSolution();
+        inputSolution.setOperand1("TryIt");
+        inputSolution.setOperand2("4");
+        inputSolution.setOperation("subtract");
+
+        String inputJson= mapper.writeValueAsString(inputSolution);
+
+        mockMvc.perform(
+                        post("/subtract")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+    @Test
+    public void shouldReturn422WhenOperandIsMissedWhenSubtract() throws Exception{
 
         //ARRANGE
+        MathSolution inputSolution = new MathSolution();
+        inputSolution.setOperand2("4");
+        inputSolution.setOperation("subtract");
+
+        String inputJson= mapper.writeValueAsString(inputSolution);
+
+        mockMvc.perform(
+                        post("/subtract")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturnAnswerQuotientOfOperand1AndOperand2() throws Exception{
+
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand1("4");
         inputSolution.setOperand2("2");
@@ -116,7 +146,6 @@ public class MathSolutionControllerTest {
 
         String inputJson= mapper.writeValueAsString(inputSolution);
 
-        //ACT
         mockMvc.perform(
                         post("/divide")
                                 .content(inputJson)
@@ -129,7 +158,6 @@ public class MathSolutionControllerTest {
     @Test
     public void shouldReturn422WhenOperand2Is0() throws Exception{
 
-        //ARRANGE
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand1("4");
         inputSolution.setOperand2("0");
@@ -137,7 +165,6 @@ public class MathSolutionControllerTest {
 
         String inputJson= mapper.writeValueAsString(inputSolution);
 
-        //ACT
         mockMvc.perform(
                         post("/divide")
                                 .content(inputJson)
@@ -147,10 +174,43 @@ public class MathSolutionControllerTest {
                 .andExpect(status().isUnprocessableEntity());
     }
     @Test
+    public void shouldReturn422WhenOperandIsMissedWhenDivide() throws Exception{
 
+        MathSolution inputSolution = new MathSolution();
+        inputSolution.setOperand2("4");
+        inputSolution.setOperation("divide");
+
+        String inputJson= mapper.writeValueAsString(inputSolution);
+
+        mockMvc.perform(
+                        post("/divide")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+    @Test
+    public void shouldReturn422WhenOperandIsNotANumberWhenDividingOperand1FromOperand2() throws Exception{
+
+        MathSolution inputSolution = new MathSolution();
+        inputSolution.setOperand1("TryIt");
+        inputSolution.setOperand2("4");
+        inputSolution.setOperation("divide");
+
+        String inputJson= mapper.writeValueAsString(inputSolution);
+
+        mockMvc.perform(
+                        post("/divide")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+    @Test
     public void shouldReturnAnswerProductOfOperand1AndOperand2() throws Exception{
 
-        //ARRANGE
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand1("4");
         inputSolution.setOperand2("2");
@@ -159,7 +219,6 @@ public class MathSolutionControllerTest {
 
         String inputJson= mapper.writeValueAsString(inputSolution);
 
-        //ACT
         mockMvc.perform(
                         post("/multiply")
                                 .content(inputJson)
@@ -171,15 +230,13 @@ public class MathSolutionControllerTest {
 
     @Test
     public void shouldReturn422WhenOperandIsNotANumberMultiplyingNumbers() throws Exception{
-        //ARRANGE
+
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand1("TryIt");
         inputSolution.setOperand2("4");
         inputSolution.setOperation("/multiply");
 
         String inputJson= mapper.writeValueAsString(inputSolution);
-
-        //ACT
 
         mockMvc.perform(
                         post("/multiply")
@@ -193,14 +250,11 @@ public class MathSolutionControllerTest {
     @Test
     public void shouldReturn422WhenOperandIsMissedWhenMultiplying() throws Exception{
 
-        //ARRANGE
         MathSolution inputSolution = new MathSolution();
         inputSolution.setOperand2("4");
         inputSolution.setOperation("/multiply");
 
         String inputJson= mapper.writeValueAsString(inputSolution);
-
-        //ACT
 
         mockMvc.perform(
                         post("/multiply")
