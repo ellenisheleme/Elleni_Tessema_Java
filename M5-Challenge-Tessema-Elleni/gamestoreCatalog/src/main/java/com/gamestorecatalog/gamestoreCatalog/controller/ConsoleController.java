@@ -1,11 +1,13 @@
 package com.gamestorecatalog.gamestoreCatalog.controller;
 
-import com.gamestorecatalog.gamestoreCatalog.repository.ConsoleRepository;
+
+import com.gamestorecatalog.gamestoreCatalog.service.GameStoreCatalogServiceLayer;
+import com.gamestorecatalog.gamestoreCatalog.viewModel.ConsoleViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import com.gamestorecatalog.gamestoreCatalog.model.Console;
+
 
 import javax.validation.Valid;
 
@@ -19,48 +21,47 @@ import java.util.Optional;
 public class ConsoleController {
 
     @Autowired
-    ConsoleRepository consoleRepository;
+    GameStoreCatalogServiceLayer service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Console createConsole(@RequestBody @Valid Console console) {
-       return consoleRepository.save(console);
-
+    public ConsoleViewModel createConsole(@RequestBody @Valid ConsoleViewModel consoleViewModel) {
+        consoleViewModel = service.createConsole(consoleViewModel);
+        return consoleViewModel;
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Console getConsole(@PathVariable("id") long consoleId) {
-        Optional<Console> consoleOptional = consoleRepository.findById(consoleId);
-
-        if (!consoleOptional.isPresent()) {
+    public ConsoleViewModel getConsole(@PathVariable("id") long consoleId) {
+        ConsoleViewModel consoleViewModel = service.getConsoleById(consoleId);
+        if (consoleViewModel == null) {
             throw new IllegalArgumentException("Console could not be retrieved for id " + consoleId);
         } else {
-            return consoleOptional.get();
+            return consoleViewModel;
         }
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateConsole(@RequestBody @Valid Console console) {
+    public void updateConsole(@RequestBody @Valid ConsoleViewModel consoleViewModel) {
 
-        if (console==null || console.getId() < 1) {
+        if (consoleViewModel==null || consoleViewModel.getId()< 1) {
             throw new IllegalArgumentException("Id in path must match id in view model");
-        } else if (console.getId() > 0) {
-           consoleRepository.save(console);
+        } else if (consoleViewModel.getId() > 0) {
+            service.updateConsole(consoleViewModel);
         }
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteConsole(@PathVariable("id") long consoleId) {
-        consoleRepository.deleteById(consoleId);
+        service.deleteConsole(consoleId);
     }
 
     @GetMapping("/manufacturer/{manufacturer}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Console> getConsoleByManufacturer(@PathVariable("manufacturer") String manu) {
-        List<Console> cvmByManufacturer = consoleRepository.findAllByManufacturer(manu);
+    public List<ConsoleViewModel> getConsoleByManufacturer(@PathVariable("manufacturer") String manu) {
+        List<ConsoleViewModel> cvmByManufacturer = service.getConsoleByManufacturer(manu);
         if (cvmByManufacturer == null || cvmByManufacturer.isEmpty()) {
             throw new IllegalArgumentException("No consoles, manufactured by " + manu + ", were found");
         } else
@@ -69,11 +70,11 @@ public class ConsoleController {
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
-    public List<Console> getAllConsoles() {
-        List<Console> cByManufacturer = consoleRepository.findAll();
-        if (cByManufacturer == null || cByManufacturer.isEmpty()) {
+    public List<ConsoleViewModel> getAllConsoles() {
+        List<ConsoleViewModel> cvmByManufacturer = service.getAllConsoles();
+        if (cvmByManufacturer == null || cvmByManufacturer.isEmpty()) {
             throw new IllegalArgumentException("No consoles were found");
         } else
-            return cByManufacturer;
+            return cvmByManufacturer;
     }
 }
