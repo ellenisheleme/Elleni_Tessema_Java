@@ -4,48 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee76447-78c7-46e8-a604-488d96f0bb68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/sql/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/sql/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/GameStoreCatalogControllerExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/controller/ConsoleControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/controller/GameControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/controller/TShirtControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/repository/ConsoleRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/repository/GameRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/repository/TShirtRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/test/java/com/gamestorecatalog/gamestoreCatalog/service/GameStoreCatalogServiceLayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/GameStoreInvoicingApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/controller/InvoiceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/model/Invoice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/model/ProcessingFee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/model/Tax.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/repository/InvoiceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/repository/ProcessingFeeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/repository/TaxRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/service/GameStoreFeignClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/service/GameStoreServiceLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/viewModel/ConsoleViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/viewModel/GameViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/viewModel/InvoiceViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gameStoreInvoicing/gamestoreinvoicing/viewModel/TShirtViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/gameStoreInvoicing/gamestoreinvoicing/GameStoreInvoicingApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/GamestoreCatalogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/GamestoreCatalogApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/ConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/ConsoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/TShirtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/controller/TShirtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/repository/ConsoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/repository/ConsoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/repository/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/repository/TShirtRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/repository/TShirtRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/service/GameStoreCatalogServiceLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestoreCatalog/src/main/java/com/gamestorecatalog/gamestoreCatalog/service/GameStoreCatalogServiceLayer.java" afterDir="false" />
-    </list>
+    <list default="true" id="dee76447-78c7-46e8-a604-488d96f0bb68" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
