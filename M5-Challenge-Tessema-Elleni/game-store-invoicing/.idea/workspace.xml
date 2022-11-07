@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee76447-78c7-46e8-a604-488d96f0bb68" name="Changes" comment="" />
+    <list default="true" id="dee76447-78c7-46e8-a604-488d96f0bb68" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../gamestore-invoicing/src/test/java/com/gamestoreinvoicing/gamestoreinvoicing/repository/TaxRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gamestore-invoicing/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gamestore-invoicing/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
