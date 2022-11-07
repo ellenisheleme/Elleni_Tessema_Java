@@ -240,9 +240,7 @@ public class GameStoreCatalogServiceLayer {
 
     public TShirtViewModel getTShirt(long id) {
         Optional<TShirt> tShirt = tShirtRepo.findById(id);
-        if (tShirt == null)
-            return null;
-        else
+
             return buildTShirtViewModel(tShirt.get());
     }
 

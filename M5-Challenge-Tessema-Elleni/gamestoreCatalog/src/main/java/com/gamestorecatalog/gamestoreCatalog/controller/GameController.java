@@ -14,7 +14,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/game")
 @CrossOrigin(origins = {"http://localhost:3000"})
-@RefreshScope
 public class GameController {
     @Autowired
     GameStoreCatalogServiceLayer service;
@@ -28,7 +27,7 @@ public class GameController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public GameViewModel getGameInfo(@PathVariable("id") long gameId) {
+    public GameViewModel getGame(@PathVariable("id") long gameId) {
         GameViewModel gameViewModel = service.getGame(gameId);
         if (gameViewModel == null) {
             throw new IllegalArgumentException("Game not found for id " + gameId);
@@ -96,4 +95,6 @@ public class GameController {
             return games;
         }
     }
+
+
 }

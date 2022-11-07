@@ -11,4 +11,6 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     List<Game> findAllByEsrbRating(String esrbRating);
     List<Game> findAllByStudio(String studio);
     List<Game> findAllByTitle(String title);
+
+
 }

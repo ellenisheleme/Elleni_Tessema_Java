@@ -8,16 +8,13 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-
 import javax.validation.Valid;
 
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RefreshScope
 @CrossOrigin(origins = {"http://localhost:3000"})
+@RequestMapping(value = "/console")
 public class ConsoleController {
 
     @Autowired
@@ -77,4 +74,6 @@ public class ConsoleController {
         } else
             return cvmByManufacturer;
     }
+
+
 }

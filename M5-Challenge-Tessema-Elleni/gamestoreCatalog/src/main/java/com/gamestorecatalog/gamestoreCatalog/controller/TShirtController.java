@@ -1,10 +1,9 @@
 package com.gamestorecatalog.gamestoreCatalog.controller;
 import com.gamestorecatalog.gamestoreCatalog.model.TShirt;
-import com.gamestorecatalog.gamestoreCatalog.repository.TShirtRepository;
 import com.gamestorecatalog.gamestoreCatalog.service.GameStoreCatalogServiceLayer;
 import com.gamestorecatalog.gamestoreCatalog.viewModel.TShirtViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -14,7 +13,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/tshirt")
 @CrossOrigin(origins = {"http://localhost:3000"})
-@RefreshScope
 public class TShirtController {
     @Autowired
     GameStoreCatalogServiceLayer service;
@@ -82,4 +80,6 @@ public class TShirtController {
         }
         return tvmByColor;
     }
+
+
 }

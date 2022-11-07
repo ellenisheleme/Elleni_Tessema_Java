@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ConsoleRepository extends JpaRepository<Console, Long> {
     List<Console> findAllByManufacturer(String manufacturer);
+
 }
