@@ -1,0 +1,17 @@
+
+SPRING_DATASOURCE_URL jdbc:mysql://h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zhvfu3zjwb8omrfk
+SPRING_DATASOURCE_USERNAME  yo0kevcdlvzufzgc
+SPRING_DATASOURCE_PASSWORD  uxbco0vgnh7kef8g
+
+MYSQL h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+
+
+
+mysql://x5fdvmxbzdliklfb:aoier3dbjyvmv7xr@qvti2nukhfiig51b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/sh8citsfsdi6br2b
+
+SPRING_DATASOURCE_URL jdbc:mysql://qvti2nukhfiig51b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/sh8citsfsdi6br2b
+
+SPRING_DATASOURCE_USERNAME  x5fdvmxbzdliklfb
+
+SPRING_DATASOURCE_PASSWORD  
+aoier3dbjyvmv7xr

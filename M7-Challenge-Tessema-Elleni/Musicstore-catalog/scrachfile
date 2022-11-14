@@ -1,0 +1,8 @@
+mysql://yo0kevcdlvzufzgc:uxbco0vgnh7kef8g@h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zhvfu3zjwb8omrfk
+
+SPRING_DATASOURCE_URL  jdbc:mysql://h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zhvfu3zjwb8omrfk
+SPRING_DATASOURCE_USERNAME  yo0kevcdlvzufzgc
+SPRING_DATASOURCE_PASSWORD  uxbco0vgnh7kef8g
+
+
+MYSQL hostname h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
